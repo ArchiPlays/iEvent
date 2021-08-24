@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    background-image: url('../img/Savin-NY-Website-Background-Web.jpg');
+}
+
+#player {
+    width: 50%;
+    height: 40%;
+}
+
+@media only screen and (max-width: 760px) {
+    #full-container {
+        width: 90%;
+        height: 80%;
+        padding: 30px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 5%);
+        border-radius: 8px;
+    }
+
+    button, input[type=submit] {
+        position: relative;
+        background-color: #2e82ff;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        border: none;
+        border-bottom: #0066ff solid 4px;
+        height: 50px;
+        font-size: 15px;
+        transition: 0.2s all;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    #full-container {
+        width: 750px;
+        height: 90%;
+        padding: 30px;
+        border: solid 3px rgb(24, 24, 24);
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 5%);
+        border-radius: 8px;
+    }
+
+    button, input[type=submit] {
+        position: relative;
+        background-color: #2e82ff;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        border: none;
+        border-bottom: #0066ff solid 4px;
+        height: 50px;
+        font-size: 20px;
+        transition: 0.2s all;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+#reader__dashboard_section_swaplink::after {
+    margin-top: 10px !important;
+}
+
+form input:not([type=submit]) {
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+
+a {
+    color: #222;
+}
