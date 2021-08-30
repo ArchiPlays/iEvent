@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+nav {
+    height: 75px;
+    line-height: 75px;
+    background-color: dodgerblue;
+    box-shadow: -4px -3px 45px 21px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
+}
+
+nav h1 {
+    margin-left: 2.5%;
+    color: white;
+    font-size: 25px;
+}
+
+#dashboard-details {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 40%;
+    padding: 10% 25% 15% 25%;
+    border-bottom: #222 2px solid;
+}
+
+#dashboard-details span {
+    font-size: 20px;
+}
+
+#count-total {
+    font-size: 70px;
+}
+
+.count-revenue {
+    margin-left: 20%;
+    z-index: 50;
+    float: right;
+    width: min-content;
+}
+
+.count-booked {
+    z-index: 20;
+    float: left;
+    width: min-content + 10;
+}
+
+#bookings-list {
+    border-collapse: collapse;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+#bookings-list td, #bookings-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:hover {
+    background-color: #ddd !important;
+    cursor: pointer;
+}
+
+#bookings-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#bookings-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    font-weight: 500;
+}
+
+th {
+    font-size: 20px;
+}
+
+/* .booking {
+    height: 40px;
+    line-height: 40px;
+    color: #111;
+    background: #eee;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.booking:not(.demo):hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
+.demo {
+    background: rgb(212, 212, 212);
+}
+
+.booking-ref {
+    margin-left: 30px !important;
+}
+
+.meal-name {
+    position: relative;
+    left: 60px !important;
+} */

@@ -77,6 +77,15 @@ body {
     }
 }
 
+select {
+    outline: none;
+    border: 1px solid rgb(27, 27, 27);
+    width: 60%;
+    font-size: 15px;
+    font-family: 'Open Sans';
+    margin-left: 10px;
+}
+
 #reader__dashboard_section_swaplink::after {
     margin-top: 10px !important;
 }
