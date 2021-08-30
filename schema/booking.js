@@ -5,8 +5,10 @@ const schema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
+    email: String,
     token: String,
-    people: [Object]
+    people: Object,
+    meal: String
 })
 
 /* 

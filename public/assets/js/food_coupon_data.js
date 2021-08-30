@@ -1,22 +1,42 @@
 let searchParams = new URLSearchParams(window.location.search)
 
-console.log('/getBooking?token=' + searchParams.get('token'))
-
 fetch('/getBooking?token=' + searchParams.get('token')).then(res => res.json()).then(booking => {
+    let keys = Object.keys(booking.people);
     console.log(booking)
-    for (let person in booking.people) {
+
+    for (let i = 0; i < keys.length; i++) {
+        if (keys[i] == "meal") continue;
+        let person = booking.people[keys[i]]
+
+        console.log(booking.people, person)
+
         let em = document.createElement('input')
         em.type = "checkbox"
-        em.name = booking.people[person].personId
+        em.name = keys[i]
         em.style.width = "15px"
         em.style.height = "15px"
-        em.checked = booking.people[person].eaten
+        em.checked = person.eaten
 
-        let mealPref = (booking.people[person].mealPref == "V") ? "Vegetarian" : "Non-Vegetarian";
+        let mealPref = (person.mealPref == "V") ? "Vegetarian" : "Non-Vegetarian";
+
+        let ageGroup = "Age <5"
+        switch (person.ageGroup) {
+            case 0:
+                break;
+            case 1:
+                ageGroup = "Age 5-15"
+                break;
+            case 2:
+                ageGroup = "Age 15-18"
+                break;
+            case 3:
+                ageGroup = "Adult"
+                break;
+        }
 
         let label = document.createElement('label')
-        label.for = booking.people[person].name
-        label.textContent = booking.people[person].name + " has eaten this meal - " + mealPref
+        label.for = person.name
+        label.textContent = `${person.name} (Age Group: ${ageGroup}) has eaten this ${mealPref} meal`
         label.style.marginLeft = "10px"
         label.style.fontSize = "20px"
 
@@ -32,8 +52,8 @@ fetch('/getBooking?token=' + searchParams.get('token')).then(res => res.json()).
 
     document.getElementById('tick_aten').appendChild(sm)
 
-    let mealType = (booking.meal.startsWith("L")) ? "Lunch" : "Dinner"
-    let dayNumber = booking.meal.substr(1)
+    let mealType = (booking.people.meal.startsWith("L")) ? "Lunch" : "Dinner"
+    let dayNumber = booking.people.meal.substr(1)
 
     document.getElementById('meal-name').textContent = mealType + " Day " + dayNumber + " - Booking Reference #" + searchParams.get('token')
 })
